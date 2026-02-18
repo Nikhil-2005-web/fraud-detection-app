@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fraud Detection</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    font-family:'Poppins',sans-serif;
+    margin:0;
+    height:100vh;
+    background:linear-gradient(-45deg,#1e3c72,#2a5298,#00c6ff,#0072ff);
+    background-size:400% 400%;
+    animation:gradientBG 10s ease infinite;
+    color:white;
+    text-align:center;
+}
+
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.nav{
+position:absolute;
+top:20px;
+right:40px;
+}
+
+.nav a{
+padding:10px 20px;
+margin-left:10px;
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+color:white;
+text-decoration:none;
+border-radius:30px;
+transition:.3s;
+}
+
+.nav a:hover{
+background:white;
+color:#0072ff;
+}
+
+.container{
+margin-top:150px;
+animation:fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+font-size:45px;
+}
+
+p{
+width:60%;
+margin:auto;
+line-height:1.6;
+}
+</style>
+</head>
+<body>
+
+<div class="nav">
+<a href="/">Home</a>
+<a href="/predict">Predict</a>
+</div>
+
+<div class="container">
+<h1>Online Payment Fraud Detection</h1>
+
+<p>
+This intelligent system predicts whether a transaction is fraudulent or legitimate
+using machine learning algorithms trained on financial transaction patterns.
+</p>
+</div>
+
+</body>
+</html>

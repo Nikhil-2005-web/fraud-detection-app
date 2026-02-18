@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Predict</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+font-family:'Poppins',sans-serif;
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#667eea,#764ba2);
+}
+
+.card{
+background:rgba(255,255,255,0.15);
+padding:40px;
+border-radius:20px;
+backdrop-filter:blur(15px);
+box-shadow:0 8px 32px rgba(0,0,0,0.2);
+width:350px;
+text-align:center;
+animation:fade 1.5s ease;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+input{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+border-radius:10px;
+outline:none;
+transition:.3s;
+}
+
+input:focus{
+box-shadow:0 0 10px #fff;
+}
+
+button{
+margin-top:15px;
+padding:12px;
+width:100%;
+border:none;
+border-radius:25px;
+background:linear-gradient(to right,#00c6ff,#0072ff);
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px #00c6ff;
+}
+
+.nav{
+position:absolute;
+top:20px;
+right:40px;
+}
+
+.nav a{
+color:white;
+margin-left:15px;
+text-decoration:none;
+font-weight:500;
+}
+</style>
+</head>
+<body>
+
+<div class="nav">
+<a href="/">Home</a>
+<a href="/predict">Predict</a>
+</div>
+
+<div class="card">
+<h2>Enter Transaction Details</h2>
+
+<form action="/submit" method="post">
+
+<input type="number" name="step" placeholder="Step" required>
+<input type="number" name="type" placeholder="Type (0–4)" required>
+<input type="number" name="amount" placeholder="Amount" required>
+<input type="number" name="oldbalanceOrg" placeholder="Sender Balance Before" required>
+<input type="number" name="newbalanceOrig" placeholder="Sender Balance After" required>
+<input type="number" name="oldbalanceDest" placeholder="Receiver Balance Before" required>
+<input type="number" name="newbalanceDest" placeholder="Receiver Balance After" required>
+
+<input type="hidden" name="isFlaggedFraud" value="0">
+
+<button type="submit">Predict Fraud</button>
+
+</form>
+</div>
+
+</body>
+</html>
